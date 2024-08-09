@@ -1,25 +1,19 @@
 <p align="center">
-    <img width="400" src="https://raw.githubusercontent.com/renatomarinho/laravel-page-speed/master/art/logo.png" alt="Laravel Page Speed logo" />
-</p>
-
-<p align="center">
-<a href="https://gitscrum.com"><img src="https://site.gitscrum.com/badges/project.svg?project=gitscrum/bulls-eye-gitscrum-37" alt="GitScrum"></a>
-<a href="https://packagist.org/packages/renatomarinho/laravel-page-speed"><img src="https://poser.pugx.org/renatomarinho/laravel-page-speed/license" alt="License"></a>
-<a href="https://packagist.org/packages/renatomarinho/laravel-page-speed"><img src="https://poser.pugx.org/renatomarinho/laravel-page-speed/version" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/renatomarinho/laravel-page-speed"><img src="https://poser.pugx.org/renatomarinho/laravel-page-speed/downloads" alt="Total Downloads"></a>
+    <img width="400" src="https://raw.githubusercontent.com/ArafatIslamKhairul/laravel-page-speed/master/art/logo.png" alt="Laravel Page Speed logo" />
 </p>
 
 # Laravel Page Speed
 
-### Simple package to minify HTML output on demand which results in a 35%+ optimization.
+### Simple package to minify HTML output on demand which results in a 60%+ optimization.
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-$ composer require renatomarinho/laravel-page-speed
+$ composer require arafatkhairul/laravel-page-speed
 ```
+
 ### Laravel 5.5 and up
 
 Laravel 5.5 and up uses Package Auto-Discovery, so doesn't require you to manually add the ServiceProvider.
@@ -28,31 +22,30 @@ Laravel 5.5 and up uses Package Auto-Discovery, so doesn't require you to manual
 
 Add the Service Provider to the providers array in **config/app.php**:
 
-`RenatoMarinho\LaravelPageSpeed\ServiceProvider::class`
+`ArafatIslamKhairul\LaravelPageSpeed\ServiceProvider::class`
 
- *This is required for publishing the configuration file:*
+_This is required for publishing the configuration file:_
 
 ### Publish configuration file
 
- `php artisan vendor:publish --provider="RenatoMarinho\LaravelPageSpeed\ServiceProvider"`
+`php artisan vendor:publish --provider="ArafatIslamKhairul\LaravelPageSpeed\ServiceProvider"`
 
 ## Do not forget to register middlewares
 
-Next, the `\RenatoMarinho\LaravelPageSpeed\Middleware\CollapseWhitespace::class` and other middleware must be registered in the kernel:
+Next, the `\ArafatIslamKhairul\LaravelPageSpeed\Middleware\CollapseWhitespace::class` and other middleware must be registered in the kernel:
 
 ```php
 //app/Http/Kernel.php
 
-protected $middleware = [
-    ...
-    \RenatoMarinho\LaravelPageSpeed\Middleware\InlineCss::class,
-    \RenatoMarinho\LaravelPageSpeed\Middleware\ElideAttributes::class,
-    \RenatoMarinho\LaravelPageSpeed\Middleware\InsertDNSPrefetch::class,
-    \RenatoMarinho\LaravelPageSpeed\Middleware\RemoveComments::class,
-    \RenatoMarinho\LaravelPageSpeed\Middleware\TrimUrls::class,
-    \RenatoMarinho\LaravelPageSpeed\Middleware\RemoveQuotes::class,
-    \RenatoMarinho\LaravelPageSpeed\Middleware\CollapseWhitespace::class,
-]
+->withMiddleware(function (Middleware $middleware) {
+        $middleware->append(\ArafatIslamKhairul\LaravelPageSpeed\Middleware\InlineCss::class,);
+        $middleware->append(\ArafatIslamKhairul\LaravelPageSpeed\Middleware\ElideAttributes::class,);
+        $middleware->append(\ArafatIslamKhairul\LaravelPageSpeed\Middleware\InsertDNSPrefetch::class,);
+        $middleware->append(\ArafatIslamKhairul\LaravelPageSpeed\Middleware\RemoveComments::class,);
+        $middleware->append(\ArafatIslamKhairul\LaravelPageSpeed\Middleware\TrimUrls::class,);
+        $middleware->append(\ArafatIslamKhairul\LaravelPageSpeed\Middleware\RemoveQuotes::class,);
+        $middleware->append(\ArafatIslamKhairul\LaravelPageSpeed\Middleware\CollapseWhitespace::class,);
+})
 ```
 
 ### Before
@@ -290,6 +283,7 @@ You would probably like to set up the local environment to get a readable output
 //Set this field to false to disable the laravel page speed service.
 'enable' => env('LARAVEL_PAGE_SPEED_ENABLE', true),
 ```
+
 ### Skip routes
 
 You would probably like to configure the package to skip some routes.
@@ -307,15 +301,15 @@ You would probably like to configure the package to skip some routes.
 
 By default this field comes configured with some options, so feel free to configure according to your needs...
 
-> *Notice*: This package skip automatically 'binary' and 'streamed' responses. See [File Downloads][link-file-download].
+> _Notice_: This package skip automatically 'binary' and 'streamed' responses. See [File Downloads][link-file-download].
 
 ## Warning
 
-**\RenatoMarinho\LaravelPageSpeed\Middleware\TrimUrls::class** is considered **medium risk**. It can cause problems if it uses the wrong base URL. This can happen, for example, if you serve HTML that will be pasted verbatim into other HTML pages. If URLs are trimmed on the first page, they will be incorrect for the page they are inserted into. In this case, just disable the middleware.
+**\ArafatIslamKhairul\LaravelPageSpeed\Middleware\TrimUrls::class** is considered **medium risk**. It can cause problems if it uses the wrong base URL. This can happen, for example, if you serve HTML that will be pasted verbatim into other HTML pages. If URLs are trimmed on the first page, they will be incorrect for the page they are inserted into. In this case, just disable the middleware.
 
 ## Testing
 
-``` bash
+```bash
 $ composer test
 ```
 
@@ -325,10 +319,10 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Credits
 
-- [Renato Marinho][link-author]
-- [João Roberto P. Borges][link-maintainer]
-- [Caneco](https://twitter.com/caneco) (for the logo)
-- [All Contributors][link-contributors]
+-   [Renato Marinho][link-author]
+-   [João Roberto P. Borges][link-maintainer]
+-   [Caneco](https://twitter.com/caneco) (for the logo)
+-   [All Contributors][link-contributors]
 
 ## Inspiration
 
@@ -340,7 +334,7 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 [link-before]: https://i.imgur.com/cN3MWYh.png
 [link-after]: https://i.imgur.com/IKWKLkL.png
-[link-author]: https://github.com/renatomarinho
+[link-author]: https://github.com/ArafatIslamKhairul
 [link-maintainer]: https://github.com/joaorobertopb
 [link-contributors]: ../../contributors
 [link-file-download]: https://laravel.com/docs/6.0/responses#file-downloads
