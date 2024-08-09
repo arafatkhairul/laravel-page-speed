@@ -1,6 +1,6 @@
 <?php
 
-namespace ArafatIslam\LaravelPageSpeed\Middleware;
+namespace ArafatIslamKhairul\LaravelPageSpeed\Middleware;
 
 class RemoveQuotes extends PageSpeed
 {

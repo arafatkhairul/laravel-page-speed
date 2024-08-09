@@ -1,9 +1,9 @@
 <?php
 
-namespace ArafatIslam\LaravelPageSpeed\Test\Middleware;
+namespace ArafatIslamKhairul\LaravelPageSpeed\Test\Middleware;
 
-use ArafatIslam\LaravelPageSpeed\Middleware\InlineCss;
-use ArafatIslam\LaravelPageSpeed\Test\TestCase;
+use ArafatIslamKhairul\LaravelPageSpeed\Middleware\InlineCss;
+use ArafatIslamKhairul\LaravelPageSpeed\Test\TestCase;
 
 class InlineCssTest extends TestCase
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace ArafatIslam\LaravelPageSpeed\Test\Config;
+namespace ArafatIslamKhairul\LaravelPageSpeed\Test\Config;
 
 use Illuminate\Http\Request;
-use ArafatIslam\LaravelPageSpeed\Middleware\TrimUrls;
-use ArafatIslam\LaravelPageSpeed\Test\TestCase;
+use ArafatIslamKhairul\LaravelPageSpeed\Middleware\TrimUrls;
+use ArafatIslamKhairul\LaravelPageSpeed\Test\TestCase;
 
 class ConfigTest extends TestCase
 {

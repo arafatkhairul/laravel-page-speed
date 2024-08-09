@@ -27,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "ArafatIslam\\LaravelPageSpeed\\": "src/"
+            "ArafatIslamKhairul\\LaravelPageSpeed\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ArafatIslam\\LaravelPageSpeed\\Test\\": "tests"
+            "ArafatIslamKhairul\\LaravelPageSpeed\\Test\\": "tests"
         }
     },
     "scripts": {
@@ -45,7 +45,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "ArafatIslam\\LaravelPageSpeed\\ServiceProvider"
+                "ArafatIslamKhairul\\LaravelPageSpeed\\ServiceProvider"
             ]
         }
     }

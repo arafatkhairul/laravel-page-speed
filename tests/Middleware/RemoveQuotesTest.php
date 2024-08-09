@@ -1,9 +1,9 @@
 <?php
 
-namespace ArafatIslam\LaravelPageSpeed\Test\Middleware;
+namespace ArafatIslamKhairul\LaravelPageSpeed\Test\Middleware;
 
-use ArafatIslam\LaravelPageSpeed\Middleware\RemoveQuotes;
-use ArafatIslam\LaravelPageSpeed\Test\TestCase;
+use ArafatIslamKhairul\LaravelPageSpeed\Middleware\RemoveQuotes;
+use ArafatIslamKhairul\LaravelPageSpeed\Test\TestCase;
 
 class RemoveQuotesTest extends TestCase
 {
