@@ -1,0 +1,52 @@
+{
+    "name": "arafat/laravel-page-speed",
+    "description": "Laravel Page Speed",
+    "keywords": [
+        "laravel",
+        "page speed",
+        "minify",
+        "optimize",
+        "html"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Arafat Islam Khairul",
+            "email": "office.khairul@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2|^8.3",
+        "illuminate/support": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0|^9.3|^10.4",
+        "orchestra/testbench": "^4.0|^5.0|^6.0|^7.0|^8.0|^9.0",
+        "squizlabs/php_codesniffer": "^2.3",
+        "mockery/mockery": ">=0.9.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "ArafatIslam\\LaravelPageSpeed\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ArafatIslam\\LaravelPageSpeed\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests",
+        "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ArafatIslam\\LaravelPageSpeed\\ServiceProvider"
+            ]
+        }
+    }
+}
